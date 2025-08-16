@@ -1,0 +1,14 @@
+[
+  {
+    "id": "optifine_forge",
+    "name": "optifine",
+    "desc": "برای استفاده از شیدر در ماینکرفت",
+    "loader": "Forge",
+    "versions": ["تمام نسخه ها"],
+    "image": "images/icons8-minecraft-optifine-400.png",
+    "links": {
+      "modrinth": "",
+      "curseforge": ""
+    }
+  }
+]
