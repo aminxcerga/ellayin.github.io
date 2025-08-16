@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ماینکرفت مد دولوپر</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #0d0d0d;
+      color: #f0f0f0;
+      line-height: 1.7;
+      background: radial-gradient(circle at top left, rgba(0,255,128,0.1), transparent 60%),
+                  radial-gradient(circle at bottom right, rgba(0,255,255,0.1), transparent 60%),
+                  #0d0d0d;
+      background-attachment: fixed;
+    }
+    header {
+      backdrop-filter: blur(20px);
+      background: rgba(0,0,0,0.6);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    header nav a {
+      margin: 0 .5rem;
+      text-decoration: none;
+      color: #ccc;
+      padding: .3rem .7rem;
+      border-radius: .6rem;
+      transition: 0.3s;
+    }
+    header nav a:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+    .hero {
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #a3ff9d, #5df0d8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 1rem auto;
+      color: #bbb;
+    }
+    .mods {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.08);
+    }
+    .tags span {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: .5rem;
+      padding: .2rem .5rem;
+      margin: .2rem;
+      display: inline-block;
+      font-size: .8rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      background: rgba(0,0,0,0.6);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(20px);
+    }
+    a.btn {
+      display: inline-block;
+      padding: .6rem 1.2rem;
+      margin: .5rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: .8rem;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    a.btn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>ماینکرفت مد دولوپر</strong></div>
+    <nav>
+      <a href="#mods">مدها</a>
+      <a href="#features">ویژگی‌ها</a>
+      <a href="#contact">ارتباط</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>مدهای حرفه‌ای برای Minecraft</h1>
+    <p>اینجا می‌تونی آخرین مدها، سورس‌کدها و داکیومنت رو پیدا کنی. تمرکز روی پرفورمنس و تجربه‌ی کاربری.</p>
+    <a href="#mods" class="btn">دانلود مدها</a>
+    <a href="https://github.com/your-handle" class="btn">گیت‌هاب</a>
+  </section>
+
+  <section id="mods" class="mods">
+    <div class="card">
+      <h3>EnderTools</h3>
+      <p>ابزارهای اندری با قابلیت‌های تله‌پورت و اتومات‌سازی.</p>
+      <div class="tags"><span>1.20.x</span><span>Forge</span></div>
+      <a href="#" class="btn">دانلود</a>
+    </div>
+    <div class="card">
+      <h3>Copper+</h3>
+      <p>جان تازه‌ای به مس با ماشین‌ها و مدارهای مدرن می‌دهد.</p>
+      <div class="tags"><span>1.20.x</span><span>Fabric</span></div>
+      <a href="#" class="btn">دانلود</a>
+    </div>
+    <div class="card">
+      <h3>Warden Tweaks</h3>
+      <p>تعادل‌دهی به وردن با رفتارهای هوشمند و لوت جدید.</p>
+      <div class="tags"><span>1.19.x</span><span>Forge</span></div>
+      <a href="#" class="btn">دانلود</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 - ساخته شده توسط شما • همه حقوق محفوظ است
+  </footer>
+
+</body>
+</html>
