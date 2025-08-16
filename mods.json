@@ -10,5 +10,127 @@
       "modrinth": "",
       "curseforge": ""
     }
+  },
+  {
+    "id": "jei",
+    "name": "Just Enough Items (JEI)",
+    "desc": "نمایش دستور ساخت‌ها و آیتم‌ها داخل بازی.",
+    "loader": "Forge",
+    "versions": ["1.20", "1.19", "1.18"],
+    "image": "images/635838945588716414.jpeg",
+    "links": {
+      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/jei",
+      "modrinth": "https://modrinth.com/mod/jei"
+    }
+  },
+  {
+    "id": "journeymap",
+    "name": "JourneyMap",
+    "desc": "مپ زنده، مینی‌مپ و نقشه تعاملی در مرورگر.",
+    "loader": "Forge",
+    "versions": ["1.20", "1.19", "1.18"],
+    "image": "images/635421614078544069.png",
+    "links": {
+      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/journeymap",
+      "modrinth": "https://modrinth.com/mod/journeymap"
+    }
+  },
+  {
+    "id": "tconstruct",
+    "name": "Tinkers' Construct",
+    "desc": "ابزار و اسلحه‌های قابل شخصی‌سازی با سیستم پیشرفته.",
+    "loader": "Forge",
+    "versions": ["1.20", "1.19", "1.16"],
+    "image": "images/637792495945179503.png",
+    "links": {
+      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/tinkers-construct",
+      "modrinth": "https://modrinth.com/mod/tinkers-construct"
+    }
+  },
+  {
+    "id": "botania",
+    "name": "Botania",
+    "desc": "جادو با استفاده از گل‌ها و مانا به جای ماشین.",
+    "loader": "Forge",
+    "versions": ["1.20", "1.19", "1.18"],
+    "image": "images/637958999552256716.png",
+    "links": {
+      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/botania",
+      "modrinth": "https://modrinth.com/mod/botania"
+    }
+  },
+  {
+    "id": "baubles",
+    "name": "Baubles",
+    "desc": "افزودن اسلات‌های جدید (انگشتر، گردنبند، کمربند).",
+    "loader": "Forge",
+    "versions": ["1.19", "1.18", "1.16"],
+    "image": "images/baubles.png",
+    "links": {
+      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/baubles",
+      "modrinth": "https://modrinth.com/mod/baubles"
+    }
+  },
+  {
+    "id": "thermal_foundation",
+    "name": "Thermal Foundation",
+    "desc": "فلزات، منابع و آیتم‌های پایه برای سری Thermal.",
+    "loader": "Forge",
+    "versions": ["1.20", "1.19", "1.16"],
+    "image": "images/thermal.png",
+    "links": {
+      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/thermal-foundation",
+      "modrinth": "https://modrinth.com/mod/thermal-foundation"
+    }
+  },
+  {
+    "id": "mekanism",
+    "name": "Mekanism",
+    "desc": "ماشین‌ها، انرژی و فناوری پیشرفته.",
+    "loader": "Forge",
+    "versions": ["1.20", "1.19", "1.18"],
+    "image": "images/mekanism.png",
+    "links": {
+      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/mekanism",
+      "modrinth": "https://modrinth.com/mod/mekanism"
+    }
+  },
+  {
+    "id": "ice_and_fire",
+    "name": "Ice and Fire: Dragons",
+    "desc": "اضافه کردن اژدها و موجودات افسانه‌ای.",
+    "loader": "Forge",
+    "versions": ["1.16", "1.12"],
+    "image": "images/iceandfire.png",
+    "links": {
+      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/ice-and-fire-dragons",
+      "modrinth": "https://modrinth.com/mod/ice-and-fire-dragons"
+    }
+  },
+  {
+    "id": "twilight_forest",
+    "name": "Twilight Forest",
+    "desc": "بایوم و دایمنشن جدید پر از باس‌ها و ماجراجویی.",
+    "loader": "Forge",
+    "versions": ["1.19", "1.18", "1.16"],
+    "image": "images/twilightforest.png",
+    "links": {
+      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest",
+      "modrinth": "https://modrinth.com/mod/the-twilight-forest"
+    }
+  },
+  {
+    "id": "galacticraft",
+    "name": "Galacticraft",
+    "desc": "سفر به فضا، سیارات و ساخت موشک.",
+    "loader": "Forge",
+    "versions": ["1.12", "1.11"],
+    "image": "images/galacticraft.png",
+    "links": {
+      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/galacticraft",
+      "modrinth": "https://modrinth.com/mod/galacticraft"
+    }
   }
+]
+
 ]
