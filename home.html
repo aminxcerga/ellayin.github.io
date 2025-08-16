@@ -1,3 +1,4 @@
+<!-- تغییرات مهم: دکمه نمایش بیشتر + مدیریت صفحه‌بندی -->
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -9,7 +10,6 @@
   @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap');
   *{box-sizing:border-box} html,body{height:100%}
   body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;color:#e8f0ea;background:#0b0c0d;line-height:1.8;overflow-x:hidden}
-  /* پس‌زمینه بلوری/گرادیانی + الگوی شطرنجی */
   .bg{position:fixed;inset:0;z-index:-2;background:
     radial-gradient(60rem 60rem at -10% -10%, rgba(0,255,170,.12), transparent 60%),
     radial-gradient(50rem 50rem at 110% 110%, rgba(0,200,255,.10), transparent 60%),
@@ -36,7 +36,7 @@
   .chip:hover,.btn:hover{background:rgba(255,255,255,.12)}
   .chip.active{background:rgba(0,255,200,.18);border-color:rgba(0,255,200,.35)}
   .btn{text-decoration:none;color:#dff}
-  .cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));padding:24px 0 50px}
+  .cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));padding:24px 0 20px}
   .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);
         border-radius:18px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
   .card:hover{transform:translateY(-6px);box-shadow:0 16px 50px rgba(0,255,200,.12)}
@@ -49,10 +49,9 @@
   .tag{font-size:.72rem;padding:.18rem .45rem;border-radius:.45rem;background:rgba(0,255,200,.12);border:1px solid rgba(0,255,200,.25)}
   .actions{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
   .actions .btn{padding:.5rem .8rem}
-  .muted{color:#9bbcb3;font-size:.85rem}
+  .muted{color:#9bbcb3;font-size:.85rem;text-align:center}
   footer{border-top:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.45);
          backdrop-filter:blur(14px);color:#a9b6b0;font-size:.9rem;padding:16px 0;text-align:center}
-  /* اسکلتون لودر */
   .skeleton{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden}
   .sk-img{height:0;padding-top:56.25%;background:linear-gradient(90deg,#1b1d1f 25%,#232628 37%,#1b1d1f 63%);background-size:400% 100%;animation:sh 1.4s ease infinite}
   .sk-txt{height:14px;margin:12px;background:linear-gradient(90deg,#1b1d1f 25%,#232628 37%,#1b1d1f 63%);background-size:400% 100%;animation:sh 1.4s ease infinite;border-radius:8px}
@@ -92,6 +91,9 @@
 
 <main class="wrap">
   <section class="cards" id="cards"></section>
+  <div style="text-align:center;margin:20px 0;">
+    <button id="loadMore" class="btn">نمایش بیشتر</button>
+  </div>
 </main>
 
 <footer>
@@ -102,8 +104,9 @@
 const $ = s => document.querySelector(s);
 const cardsEl = $("#cards");
 const qEl = $("#q");
+const loadMoreBtn = $("#loadMore");
 const chips = () => [...document.querySelectorAll(".chip")];
-const state = { query:"", filter:"all", mods:[] };
+const state = { query:"", filter:"all", mods:[], visible:20 };
 
 function matchFilter(m){
   const f = state.filter;
@@ -142,18 +145,11 @@ function cardTpl(m){
     </div>
   </article>`;
 }
-function skeleton(n=6){
-  cardsEl.innerHTML = Array.from({length:n}).map(()=>`
-    <div class="skeleton">
-      <div class="sk-img"></div>
-      <div class="sk-txt" style="width:70%"></div>
-      <div class="sk-txt" style="width:90%"></div>
-      <div class="sk-txt" style="width:50%"></div>
-    </div>`).join("");
-}
 function render(){
   const list = state.mods.filter(m=>matchFilter(m)&&matchQuery(m));
-  cardsEl.innerHTML = list.map(cardTpl).join("") || `<div class="muted">چیزی پیدا نشد. جستجو/فیلتر را تغییر بده.</div>`;
+  const sliced = list.slice(0, state.visible);
+  cardsEl.innerHTML = sliced.map(cardTpl).join("") || `<div class="muted">چیزی پیدا نشد.</div>`;
+  loadMoreBtn.style.display = state.visible >= list.length ? "none" : "inline-block";
 }
 function bindFilters(){
   chips().forEach(c=>{
@@ -161,13 +157,13 @@ function bindFilters(){
       chips().forEach(x=>x.classList.remove("active"));
       c.classList.add("active");
       state.filter = c.dataset.filter;
+      state.visible = 20; // ریست کردن نمایش
       render();
     });
   });
 }
 async function fetchMods(){
   try{
-    skeleton();
     const res = await fetch("mods.json", {cache:"no-store"});
     if(!res.ok) throw new Error("mods.json یافت نشد");
     const mods = await res.json();
@@ -179,6 +175,7 @@ async function fetchMods(){
 }
 document.getElementById("y").textContent = new Date().getFullYear();
 qEl.addEventListener("input", e=>{ state.query = e.target.value.trim(); render(); });
+loadMoreBtn.addEventListener("click", ()=>{ state.visible += 20; render(); });
 bindFilters();
 fetchMods();
 </script>
