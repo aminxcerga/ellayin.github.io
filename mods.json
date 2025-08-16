@@ -1,23 +1,11 @@
 [
   {
-    "id": "optifine_forge",
-    "name": "optifine",
-    "desc": "برای استفاده از شیدر در ماینکرفت",
-    "loader": "Forge",
-    "versions": ["تمام نسخه ها"],
-    "image": "images/icons8-minecraft-optifine-400.png",
-    "links": {
-      "modrinth": "",
-      "curseforge": ""
-    }
-  },
-  {
     "id": "jei",
     "name": "Just Enough Items (JEI)",
-    "desc": "نمایش دستور ساخت‌ها و آیتم‌ها داخل بازی.",
+    "desc": "نمایش دستورالعمل‌ها و آیتم‌ها درون بازی.",
     "loader": "Forge",
-    "versions": ["1.20", "1.19", "1.18"],
-    "image": "images/635838945588716414.jpeg",
+    "versions": ["1.21","1.20","1.19","1.18"],
+    "image": "https://i.imgur.com/abcd1234.jpg",
     "links": {
       "curseforge": "https://www.curseforge.com/minecraft/mc-mods/jei",
       "modrinth": "https://modrinth.com/mod/jei"
@@ -26,22 +14,22 @@
   {
     "id": "journeymap",
     "name": "JourneyMap",
-    "desc": "مپ زنده، مینی‌مپ و نقشه تعاملی در مرورگر.",
+    "desc": "نقشه زنده داخل بازی و در مرورگر.",
     "loader": "Forge",
-    "versions": ["1.20", "1.19", "1.18"],
-    "image": "images/635421614078544069.png",
+    "versions": ["1.21","1.20","1.19","1.18"],
+    "image": "https://i.imgur.com/efgh5678.jpg",
     "links": {
       "curseforge": "https://www.curseforge.com/minecraft/mc-mods/journeymap",
       "modrinth": "https://modrinth.com/mod/journeymap"
     }
   },
   {
-    "id": "tconstruct",
+    "id": "tinkers-construct",
     "name": "Tinkers' Construct",
-    "desc": "ابزار و اسلحه‌های قابل شخصی‌سازی با سیستم پیشرفته.",
+    "desc": "سیستم ساخت ابزار پیشرفته با ارتقاء.",
     "loader": "Forge",
-    "versions": ["1.20", "1.19", "1.16"],
-    "image": "images/637792495945179503.png",
+    "versions": ["1.20","1.19","1.18"],
+    "image": "https://i.imgur.com/ijkl9012.jpg",
     "links": {
       "curseforge": "https://www.curseforge.com/minecraft/mc-mods/tinkers-construct",
       "modrinth": "https://modrinth.com/mod/tinkers-construct"
@@ -50,87 +38,85 @@
   {
     "id": "botania",
     "name": "Botania",
-    "desc": "جادو با استفاده از گل‌ها و مانا به جای ماشین.",
+    "desc": "جادو با گل‌ها و مانا.",
     "loader": "Forge",
-    "versions": ["1.20", "1.19", "1.18"],
-    "image": "images/637958999552256716.png",
+    "versions": ["1.21","1.20","1.19","1.18"],
+    "image": "https://i.imgur.com/mnop3456.jpg",
     "links": {
       "curseforge": "https://www.curseforge.com/minecraft/mc-mods/botania",
       "modrinth": "https://modrinth.com/mod/botania"
     }
   },
   {
-    "id": "baubles",
-    "name": "Baubles",
-    "desc": "افزودن اسلات‌های جدید (انگشتر، گردنبند، کمربند).",
-    "loader": "Forge",
-    "versions": ["1.19", "1.18", "1.16"],
-    "image": "images/baubles.png",
-    "links": {
-      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/baubles",
-      "modrinth": "https://modrinth.com/mod/baubles"
-    }
-  },
-  {
-    "id": "thermal_foundation",
-    "name": "Thermal Foundation",
-    "desc": "فلزات، منابع و آیتم‌های پایه برای سری Thermal.",
-    "loader": "Forge",
-    "versions": ["1.20", "1.19", "1.16"],
-    "image": "images/thermal.png",
-    "links": {
-      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/thermal-foundation",
-      "modrinth": "https://modrinth.com/mod/thermal-foundation"
-    }
-  },
-  {
     "id": "mekanism",
     "name": "Mekanism",
-    "desc": "ماشین‌ها، انرژی و فناوری پیشرفته.",
+    "desc": "ماشین‌ها، انرژی و تکنولوژی پیشرفته.",
     "loader": "Forge",
-    "versions": ["1.20", "1.19", "1.18"],
-    "image": "images/mekanism.png",
+    "versions": ["1.21","1.20","1.19"],
+    "image": "https://i.imgur.com/qrst7890.jpg",
     "links": {
       "curseforge": "https://www.curseforge.com/minecraft/mc-mods/mekanism",
       "modrinth": "https://modrinth.com/mod/mekanism"
     }
   },
   {
-    "id": "ice_and_fire",
-    "name": "Ice and Fire: Dragons",
-    "desc": "اضافه کردن اژدها و موجودات افسانه‌ای.",
+    "id": "create",
+    "name": "Create",
+    "desc": "ماشین‌های مکانیکی چرخ‌دنده‌ای و اتوماسیون.",
     "loader": "Forge",
-    "versions": ["1.16", "1.12"],
-    "image": "images/iceandfire.png",
+    "versions": ["1.21","1.20","1.19"],
+    "image": "https://i.imgur.com/uvwx1234.jpg",
     "links": {
-      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/ice-and-fire-dragons",
-      "modrinth": "https://modrinth.com/mod/ice-and-fire-dragons"
+      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/create",
+      "modrinth": "https://modrinth.com/mod/create"
     }
   },
   {
-    "id": "twilight_forest",
-    "name": "Twilight Forest",
-    "desc": "بایوم و دایمنشن جدید پر از باس‌ها و ماجراجویی.",
+    "id": "ae2",
+    "name": "Applied Energistics 2",
+    "desc": "ذخیره‌سازی دیجیتال آیتم‌ها و اتوماسیون.",
     "loader": "Forge",
-    "versions": ["1.19", "1.18", "1.16"],
-    "image": "images/twilightforest.png",
+    "versions": ["1.21","1.20","1.19","1.18"],
+    "image": "https://i.imgur.com/yzab5678.jpg",
+    "links": {
+      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2",
+      "modrinth": "https://modrinth.com/mod/ae2"
+    }
+  },
+  {
+    "id": "immersive-engineering",
+    "name": "Immersive Engineering",
+    "desc": "ماشین‌ها و ابزارهای صنعتی واقع‌گرایانه.",
+    "loader": "Forge",
+    "versions": ["1.20","1.19","1.18"],
+    "image": "https://i.imgur.com/cdef9012.jpg",
+    "links": {
+      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering",
+      "modrinth": "https://modrinth.com/mod/immersive-engineering"
+    }
+  },
+  {
+    "id": "thermal-foundation",
+    "name": "Thermal Foundation",
+    "desc": "منابع پایه برای سری Thermal.",
+    "loader": "Forge",
+    "versions": ["1.20","1.19","1.18"],
+    "image": "https://i.imgur.com/ghij3456.jpg",
+    "links": {
+      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/thermal-foundation",
+      "modrinth": "https://modrinth.com/mod/thermal-foundation"
+    }
+  },
+  {
+    "id": "twilight-forest",
+    "name": "Twilight Forest",
+    "desc": "دایمنشن جدید پر از باس‌ها و ماجراجویی.",
+    "loader": "Forge",
+    "versions": ["1.19","1.18","1.16"],
+    "image": "https://i.imgur.com/klmn7890.jpg",
     "links": {
       "curseforge": "https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest",
       "modrinth": "https://modrinth.com/mod/the-twilight-forest"
     }
-  },
-  {
-    "id": "galacticraft",
-    "name": "Galacticraft",
-    "desc": "سفر به فضا، سیارات و ساخت موشک.",
-    "loader": "Forge",
-    "versions": ["1.12", "1.11"],
-    "image": "images/galacticraft.png",
-    "links": {
-      "curseforge": "https://www.curseforge.com/minecraft/mc-mods/galacticraft",
-      "modrinth": "https://modrinth.com/mod/galacticraft"
-    }
   }
 ]
-
-
