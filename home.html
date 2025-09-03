@@ -1,183 +1,47 @@
-<!-- تغییرات مهم: دکمه نمایش بیشتر + مدیریت صفحه‌بندی -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>کتابخانه مودهای Minecraft — تک‌فایل</title>
-<meta name="color-scheme" content="dark">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap');
-  *{box-sizing:border-box} html,body{height:100%}
-  body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;color:#e8f0ea;background:#0b0c0d;line-height:1.8;overflow-x:hidden}
-  .bg{position:fixed;inset:0;z-index:-2;background:
-    radial-gradient(60rem 60rem at -10% -10%, rgba(0,255,170,.12), transparent 60%),
-    radial-gradient(50rem 50rem at 110% 110%, rgba(0,200,255,.10), transparent 60%),
-    #0b0c0d}
-  .grid-tex{position:fixed;inset:0;z-index:-1;opacity:.06;background:
-    linear-gradient(to right,#fff 1px,transparent 1px) 0 0/32px 32px,
-    linear-gradient(to bottom,#fff 1px,transparent 1px) 0 0/32px 32px}
-  .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
-  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(18px);
-         background:rgba(0,0,0,.45);border-bottom:1px solid rgba(255,255,255,.08)}
-  .nav{height:64px;display:flex;align-items:center;justify-content:space-between}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-  .logo{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
-        background:linear-gradient(180deg,rgba(163,255,157,.35),rgba(93,240,216,.25));
-        box-shadow:0 6px 25px rgba(0,255,200,.2) inset}
-  .search{width:100%;display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 6px}
-  .search input{flex:1 1 320px;padding:.75rem 1rem;border-radius:14px;border:1px solid rgba(255,255,255,.12);
-                background:rgba(255,255,255,.06);color:#fff;outline:none}
-  .filters{display:flex;gap:8px;flex-wrap:wrap;padding:14px 0 18px}
-  .chip,.btn{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);
-             padding:.45rem .7rem;border-radius:12px;cursor:pointer;user-select:none;
-             transition:.25s;display:inline-flex;align-items:center;gap:.4rem;
-             backdrop-filter:saturate(140%) blur(8px)}
-  .chip:hover,.btn:hover{background:rgba(255,255,255,.12)}
-  .chip.active{background:rgba(0,255,200,.18);border-color:rgba(0,255,200,.35)}
-  .btn{text-decoration:none;color:#dff}
-  .cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));padding:24px 0 20px}
-  .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);
-        border-radius:18px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
-  .card:hover{transform:translateY(-6px);box-shadow:0 16px 50px rgba(0,255,200,.12)}
-  .thumb{aspect-ratio:16/9;width:100%;background:#131416;object-fit:cover;display:block}
-  .content{padding:14px;display:flex;flex-direction:column;gap:10px}
-  .title{font-weight:800;font-size:1.05rem;display:flex;align-items:center;justify-content:space-between;gap:8px}
-  .badge{font-size:.72rem;padding:.2rem .5rem;border-radius:.5rem;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.12)}
-  .desc{color:#bfcacc;font-size:.92rem}
-  .tags{display:flex;flex-wrap:wrap;gap:6px}
-  .tag{font-size:.72rem;padding:.18rem .45rem;border-radius:.45rem;background:rgba(0,255,200,.12);border:1px solid rgba(0,255,200,.25)}
-  .actions{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
-  .actions .btn{padding:.5rem .8rem}
-  .muted{color:#9bbcb3;font-size:.85rem;text-align:center}
-  footer{border-top:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.45);
-         backdrop-filter:blur(14px);color:#a9b6b0;font-size:.9rem;padding:16px 0;text-align:center}
-  .skeleton{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden}
-  .sk-img{height:0;padding-top:56.25%;background:linear-gradient(90deg,#1b1d1f 25%,#232628 37%,#1b1d1f 63%);background-size:400% 100%;animation:sh 1.4s ease infinite}
-  .sk-txt{height:14px;margin:12px;background:linear-gradient(90deg,#1b1d1f 25%,#232628 37%,#1b1d1f 63%);background-size:400% 100%;animation:sh 1.4s ease infinite;border-radius:8px}
-  @keyframes sh{0%{background-position:100% 0}100%{background-position:-100% 0}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MINECRAFT STATION 5 DELUXE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Vazirmatn:wght@400;800&display=swap" rel="stylesheet">
+  <style>
+    :root{ --x:50vw; --y:50vh; --neon:#28e6ff; --neon2:#ab4bff; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:#000; color:#fff; display:grid; place-items:center; overflow:hidden;
+      font-family:"Vazirmatn", system-ui;
+      background: radial-gradient(1200px 800px at 20% 10%, #0a0b0f 0, #000 70%) fixed;
+    }
+    .halo{position:fixed; inset:0; pointer-events:none; opacity:.9;
+      background: radial-gradient(260px 260px at var(--x) var(--y), color-mix(in oklab, var(--neon) 35%, transparent), transparent 60%);
+      filter:blur(22px) saturate(140%);
+    }
+    h1{
+      margin:0; text-align:center; text-transform:uppercase;
+      font:900 clamp(40px,9vw,120px)/1.02 "Audiowide", system-ui;
+      letter-spacing:.06em;
+      background: radial-gradient(140% 200% at 50% 0%, var(--neon), var(--neon2) 45%, #ff2a6d 90%);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      text-shadow: 0 0 10px color-mix(in oklab, var(--neon) 40%, transparent), 0 0 28px color-mix(in oklab, var(--neon2) 35%, transparent);
+    }
+    .shadow{position:absolute; inset:auto auto 10% 50%; transform:translateX(-50%); width:min(80vw,900px); height:40px; filter:blur(24px); background: radial-gradient(60% 60% at 50% 50%, rgba(0,0,0,0), rgba(0,0,0,.55));}
+  </style>
 </head>
 <body>
-<div class="bg"></div><div class="grid-tex"></div>
-
-<header>
-  <div class="wrap nav">
-    <div class="brand">
-      <div class="logo">⬢</div>
-      <div>
-        <div>Minecraft Mod Library</div>
-        <div class="muted">تم مشکی/بلوری • تک‌فایل + mods.json</div>
-      </div>
-    </div>
-    <a class="btn" href="https://modrinth.com" target="_blank" rel="noopener">Modrinth ↗</a>
-  </div>
-  <div class="wrap">
-    <div class="search">
-      <input id="q" placeholder="جستجو: نام مود، توضیح، نسخه ماینکرفت..." />
-      <div class="filters" id="filters">
-        <span class="chip active" data-filter="all">همه</span>
-        <span class="chip" data-filter="Forge">Forge</span>
-        <span class="chip" data-filter="Fabric">Fabric</span>
-        <span class="chip" data-filter="Quilt">Quilt</span>
-        <span class="chip" data-filter="NeoForge">NeoForge</span>
-        <span class="chip" data-filter="1.20">1.20.x</span>
-        <span class="chip" data-filter="1.19">1.19.x</span>
-        <span class="chip" data-filter="1.18">1.18.x</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main class="wrap">
-  <section class="cards" id="cards"></section>
-  <div style="text-align:center;margin:20px 0;">
-    <button id="loadMore" class="btn">نمایش بیشتر</button>
-  </div>
-</main>
-
-<footer>
-  © <span id="y"></span> — شما | دیتا از <code>mods.json</code>
-</footer>
-
-<script>
-const $ = s => document.querySelector(s);
-const cardsEl = $("#cards");
-const qEl = $("#q");
-const loadMoreBtn = $("#loadMore");
-const chips = () => [...document.querySelectorAll(".chip")];
-const state = { query:"", filter:"all", mods:[], visible:20 };
-
-function matchFilter(m){
-  const f = state.filter;
-  if (f==="all") return true;
-  if (/^\d\.\d+/.test(f)) return (m.versions || []).some(v => (v+"").startsWith(f));
-  return (m.loader||"") === f;
-}
-function matchQuery(m){
-  if (!state.query) return true;
-  const q = state.query.toLowerCase();
-  const hay = [m.name,m.desc,m.loader,(m.versions||[]).join(" ")].join(" ").toLowerCase();
-  return hay.includes(q);
-}
-function linkBtn(href, label){
-  if (!href) return "";
-  return `<a class="btn" href="${href}" target="_blank" rel="noopener">${label}</a>`;
-}
-function cardTpl(m){
-  const img = m.image || "images/placeholder.png";
-  return `
-  <article class="card" data-id="${m.id||""}">
-    <img class="thumb" loading="lazy" alt="${m.name||""}" src="${img}">
-    <div class="content">
-      <div class="title">
-        <span>${m.name||"بدون نام"}</span>
-        <span class="badge">${m.loader||"—"}</span>
-      </div>
-      <div class="desc">${m.desc||""}</div>
-      <div class="tags">${(m.versions||[]).map(v=>`<span class="tag">${v}.x</span>`).join("")}</div>
-      <div class="actions">
-        ${linkBtn(m?.links?.modrinth,"Modrinth")}
-        ${linkBtn(m?.links?.curseforge,"CurseForge")}
-        ${linkBtn(m?.links?.direct,"دانلود مستقیم")}
-        ${linkBtn(m?.links?.source,"Source")}
-      </div>
-    </div>
-  </article>`;
-}
-function render(){
-  const list = state.mods.filter(m=>matchFilter(m)&&matchQuery(m));
-  const sliced = list.slice(0, state.visible);
-  cardsEl.innerHTML = sliced.map(cardTpl).join("") || `<div class="muted">چیزی پیدا نشد.</div>`;
-  loadMoreBtn.style.display = state.visible >= list.length ? "none" : "inline-block";
-}
-function bindFilters(){
-  chips().forEach(c=>{
-    c.addEventListener("click", ()=>{
-      chips().forEach(x=>x.classList.remove("active"));
-      c.classList.add("active");
-      state.filter = c.dataset.filter;
-      state.visible = 20; // ریست کردن نمایش
-      render();
-    });
-  });
-}
-async function fetchMods(){
-  try{
-    const res = await fetch("mods.json", {cache:"no-store"});
-    if(!res.ok) throw new Error("mods.json یافت نشد");
-    const mods = await res.json();
-    state.mods = Array.isArray(mods) ? mods : [];
-    render();
-  }catch(err){
-    cardsEl.innerHTML = `<div class="muted">❗ خطا در بارگذاری <code>mods.json</code>: ${err.message}</div>`;
-  }
-}
-document.getElementById("y").textContent = new Date().getFullYear();
-qEl.addEventListener("input", e=>{ state.query = e.target.value.trim(); render(); });
-loadMoreBtn.addEventListener("click", ()=>{ state.visible += 20; render(); });
-bindFilters();
-fetchMods();
-</script>
+  <div class="halo" aria-hidden="true"></div>
+  <h1>MINECRAFT STATION 5 DELUXE</h1>
+  <div class="shadow" aria-hidden="true"></div>
+  <script>
+    const root = document.documentElement;
+    const move = e => {
+      const p = e.touches ? e.touches[0] : e;
+      root.style.setProperty('--x', p.clientX + 'px');
+      root.style.setProperty('--y', p.clientY + 'px');
+    };
+    addEventListener('mousemove', move);
+    addEventListener('touchmove', move, { passive:true });
+  </script>
 </body>
 </html>
