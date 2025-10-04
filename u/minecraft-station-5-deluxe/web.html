@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Minecraft Station 5 Deluxe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* ================= پایه عمومی ================= */
+    :root {
+      --bg-dark: #0a0a0c;
+      --bg-card: #111113;
+      --clr-text: #f0f0f0;
+      --clr-muted: #aaaaaa;
+      --clr-accent: #ff005c;
+      --clr-accent2: #00e0ff;
+      --radius: 14px;
+      --fw: "Tahoma", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(180deg, #050505, #101010);
+      font-family: var(--fw);
+      color: var(--clr-text);
+      line-height: 1.6;
+      direction: rtl;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: bold;
+    }
+
+    /* ================= هدر ================= */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--clr-accent2);
+      text-shadow: 0 0 10px var(--clr-accent2);
+    }
+
+    nav a {
+      color: var(--clr-muted);
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--clr-accent);
+    }
+
+    /* ================= کارت‌ها با perspective ================= */
+    .cards-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      perspective: 1000px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      padding: 20px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.05);
+      transform-style: preserve-3d;
+      transform: rotateY(0deg) rotateX(0deg);
+      transition: transform 0.6s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .card:hover {
+      transform: rotateY(8deg) rotateX(6deg);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      color: var(--clr-accent2);
+      font-size: 20px;
+    }
+
+    .card p {
+      color: var(--clr-muted);
+      font-size: 14px;
+    }
+
+    /* ================= ویژگی‌ها ================= */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .feature {
+      flex: 1 1 calc(50% - 10px);
+      background: rgba(255,255,255,0.02);
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.05);
+      font-size: 14px;
+      transition: transform 0.4s ease;
+    }
+
+    .feature:hover {
+      transform: scale(1.05) rotateY(5deg);
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* ================= دکمه دانلود ================= */
+    .download-box {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .btn-download {
+      padding: 14px 22px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(90deg, var(--clr-accent), var(--clr-accent2));
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-download:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+    }
+
+    /* ================= مدال ================= */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal {
+      background: #141416;
+      padding: 20px;
+      border-radius: var(--radius);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.05);
+      animation: pop 0.4s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .modal h3 {
+      margin-bottom: 12px;
+      color: var(--clr-accent);
+    }
+
+    .modal p {
+      font-size: 13px;
+      color: #ffcccc;
+      word-break: break-all;
+    }
+
+    .close-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--clr-muted);
+      border: 1px solid rgba(255,255,255,0.1);
+      cursor: pointer;
+    }
+
+    /* ================= فوتر ================= */
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--clr-muted);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="logo">Minecraft Station 5 Deluxe</div>
+      <nav>
+        <a href="#">خانه</a>
+        <a href="#">ویژگی‌ها</a>
+        <a href="#">دانلود</a>
+      </nav>
+    </header>
+
+    <section class="cards-wrapper">
+      <!-- معرفی -->
+      <div class="card">
+        <h2>معرفی مپ</h2>
+        <p>
+          Minecraft Station 5 Deluxe یک مپ پارکوری و ماجراجویی است که شامل هزارتوهای چالش‌برانگیز،
+          پرش‌های دقیق و مراحل متنوع آسان تا بسیار سخت می‌باشد. این مپ برای بازیکنان حرفه‌ای و تازه‌کار طراحی شده
+          تا مهارت‌های پارکور خود را به چالش بکشند.
+        </p>
+      </div>
+
+      <!-- ویژگی‌ها -->
+      <div class="card">
+        <h2>ویژگی‌ها</h2>
+        <div class="features">
+          <div class="feature">پارکور کلاسیک با پرش‌های متوالی</div>
+          <div class="feature">هزارتوهای پیچیده و مسیرهای مخفی</div>
+          <div class="feature">مراحل آسان برای تازه‌کارها</div>
+          <div class="feature">مراحل بسیار سخت برای حرفه‌ای‌ها</div>
+          <div class="feature">سازگار با نسخه جاوا Minecraft</div>
+          <div class="feature">امکان بازی تک‌نفره و چندنفره</div>
+        </div>
+      </div>
+
+      <!-- اطلاعات -->
+      <div class="card">
+        <h2>اطلاعات</h2>
+        <p><strong>نوع مپ:</strong> پارکور + هزارتو</p>
+        <p><strong>نسخه:</strong> Station 5 Deluxe</p>
+        <p><strong>سختی:</strong> از آسان تا فوق سخت</p>
+        <p><strong>سازنده:</strong> تیم Minecraft Deluxe</p>
+      </div>
+    </section>
+
+    <div class="download-box">
+      <button class="btn-download" id="downloadBtn">دانلود مپ</button>
+    </div>
+
+    <footer>
+      © 2025 Minecraft Station 5 Deluxe — همه حقوق محفوظ است.
+    </footer>
+  </div>
+
+  <!-- مدال -->
+  <div class="modal-backdrop" id="modal">
+    <div class="modal">
+      <h3>خطا در دانلود</h3>
+      <p>can't access to uia.ct.ws/download?12try too many request</p>
+      <button class="close-btn" id="closeModal">بستن</button>
+    </div>
+  </div>
+
+  <script>
+    const downloadBtn = document.getElementById("downloadBtn");
+    const modal = document.getElementById("modal");
+    const closeModal = document.getElementById("closeModal");
+
+    downloadBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.style.display = "flex";
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("keydown", (ev) => {
+      if (ev.key === "Escape") {
+        modal.style.display = "none";
+      }
+    });
+
+    modal.addEventListener("click", (ev) => {
+      if (ev.target === modal) modal.style.display = "none";
+    });
+  </script>
+
+</body>
+</html>
